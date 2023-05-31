@@ -7,20 +7,22 @@
 </head>
 
 <body>
-  <header th:insert="blocks/header :: header"></header>
+<header th:insert="blocks/header :: header"></header>
 
   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
     <h1 class="display-4 fw-normal">Блог сайта</h1>
     <p class="fs-5 text-body-secondary">Какой-то контент</p>
   </div>
 
-<!--  <main>-->
-<!--    <div class="container mt-5">-->
-<!--      <h1>Блог сайта</h1>-->
-<!--    </div>-->
-<!--  </main>-->
 
-  <div th:insert="blocks/footer :: footer"></div>
+<div class="container mt-5">
+      <div th:each="el : ${posts}" class="alert alert-info mt-2">
+        <h3 th:text="${el.title}" />
+        <p th:text="${el.anons}" />
+        <a th:href="'/blog' + ${el.id}">Детальнее</a>
+      </div>
+</div>
 
+<div th:insert="blocks/footer :: footer"></div>
 </body>
 </html>
