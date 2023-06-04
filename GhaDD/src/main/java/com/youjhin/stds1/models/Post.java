@@ -15,6 +15,15 @@ public class Post {
     private String title, anons, full_text;
     private int vies;
 
+    public Post() {
+    }
+
+    public Post(String title, String anons, String full_text) {
+        this.title = title;
+        this.anons = anons;
+        this.full_text = full_text;
+    }
+
     public String getTitle() {
         return title;
     }
